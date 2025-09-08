@@ -11,7 +11,7 @@ Print:
 "Invalid username or password" otherwise
 
 """
-import getpass
+import getpass # a built-in module by Python that hides the text being typed on screen
 
 max_attempts = 3
 attempts = 0
