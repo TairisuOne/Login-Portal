@@ -11,6 +11,7 @@ Print:
 "Invalid username or password" otherwise
 
 """
+import getpass
 
 max_attempts = 3
 attempts = 0
@@ -25,7 +26,7 @@ correct_password = "123456"
 while attempts < max_attempts: # a loop that iterates until it reaches the max attempts
 
     username = input("Enter username: ")
-    password = input("Enter password: ")
+    password = getpass.getpass("Enter password: ")
 
     if username == correct_username and password == correct_password:
         print("Login Successful")
