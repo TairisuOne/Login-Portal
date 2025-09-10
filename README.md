@@ -13,6 +13,7 @@ A simple login portal that validates username and password with limited attempts
 2. Limits Login Attempts
 3. Checks Directory for Username and Password 
 4. Hides Password from being visible
+5. Registration 
 
 ## Usage
 
