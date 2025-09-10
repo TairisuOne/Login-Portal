@@ -41,12 +41,13 @@ while attempts < max_attempts: # a loop that iterates until it reaches the max a
             print("Login Success")
             break # exit the loop once the login is successful 
         
-        else: 
-            print("Incorrect Creditentials")
+        else:
+            attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
+            remaining_attempts = max_attempts - attempts
+            print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
+            
     else:
-        attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
-        remaining_attempts = max_attempts - attempts
-        print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
+        print("Username not found")
 
 # after exiting the following if statement is ran
 if attempts == max_attempts:
