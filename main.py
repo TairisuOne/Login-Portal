@@ -29,6 +29,7 @@ users = {
     "Thai": "Python12_Cat"
 }
 
+
 action = input("Do you want to login or register? (login/register): ").lower() # new variable that asks if the user wants to LOGIN or Register
 
 if action == "login": # runs if the condition is TRUE
@@ -52,6 +53,24 @@ if action == "login": # runs if the condition is TRUE
                 
         if username not in users:
             print("Username not found. Please try again")
+
+            
+elif action == "register":
+
+    while True: # loops until gives a username that's not in use.
+        new_username = input("Choose a username: ")
+
+        if new_username in users:
+            print("Username already in use. Choose another one")
+        
+        else:
+            new_password = getpass.getpass("Enter a password: ")
+
+            users[new_username] = new_password
+
+            print("Registration Successful!")
+            break
+
 
 # after exiting the following if statement is ran
 if attempts == max_attempts:
