@@ -29,25 +29,29 @@ users = {
     "Thai": "Python12_Cat"
 }
 
-while attempts < max_attempts: # a loop that iterates until it reaches the max attempts
+action = input("Do you want to login or register? (login/register): ").lower() # new variable that asks if the user wants to LOGIN or Register
 
-    username = input("Enter username: ")
+if action == "login": # runs if the condition is TRUE
 
-    if username in users: # checks to see if username exists in the directory: if --true-- then ...
-        password = getpass.getpass("Enter password: ")
+    while attempts < max_attempts: # a loop that iterates until it reaches the max attempts
 
-        if password == users[username]: # checks to see the password entered matches up with password in the directory associated with key-valued pair: if --true-- then
+        username = input("Enter username: ")
 
-            print("Login Success")
-            break # exit the loop once the login is successful 
-        
-        else:
-            attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
-            remaining_attempts = max_attempts - attempts
-            print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
+        if username in users: # checks to see if username exists in the directory: if --true-- then ...
+            password = getpass.getpass("Enter password: ")
+
+            if password == users[username]: # checks to see the password entered matches up with password in the directory associated with key-valued pair: if --true-- then
+
+                print("Login Success")
+                break # exit the loop once the login is successful 
             
-    if username not in users:
-        print("Username not found. Please try again")
+            else:
+                attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
+                remaining_attempts = max_attempts - attempts
+                print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
+                
+        if username not in users:
+            print("Username not found. Please try again")
 
 # after exiting the following if statement is ran
 if attempts == max_attempts:
