@@ -37,7 +37,7 @@ while True:
 
         while attempts < max_attempts and logged_in: # a loop that iterates until it reaches the max attempts
 
-            username = input("Enter username: ").lower()
+            username = input("Enter username: ")
 
             if username in users: # checks to see if username exists in the directory: if --true-- then ...
                 password = getpass.getpass("Enter password: ")
