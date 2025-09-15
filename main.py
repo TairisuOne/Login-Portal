@@ -37,10 +37,9 @@ while True:
     if action == "login": # runs if the condition is TRUE
         logged_in = True
 
-        print("****LOGIN PORTAL****")
 
-        while attempts < max_attempts and logged_in: # a loop that iterates until it reaches the max attempts
-            
+        while attempts < max_attempts: # a loop that iterates until it reaches the max attempts
+            print("****      LOGIN PORTAL     ****\n")
             username = input("Enter username: ").lower()
 
             if username in users: # checks to see if username exists in the directory: if --true-- then ...
@@ -88,7 +87,7 @@ while True:
                 else:
                     attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
                     remaining_attempts = max_attempts - attempts
-                    print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
+                    print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}\n")
                     
             else:
                 print("Username not found. Please try again\n")
@@ -98,9 +97,10 @@ while True:
 
         print("\n" + "="*30)
         
-        print("****REGISTER PORTAL****")
-
+        
         while True: # loops until gives a username that's not in use.
+            print("****      REGISTER PORTAL      ****\n")
+
             new_username = input("Choose a username: ").lower()
 
             if new_username in users:
