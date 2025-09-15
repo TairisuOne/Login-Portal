@@ -56,7 +56,7 @@ while True:
                             logged_in = False
 
                         elif menu == "delete":
-                            account_deletion = input("Enter your username to delete: ").strip().lower()
+                            account_deletion = input("Enter your username to delete: ").strip()
 
                             if account_deletion in users:
                                 password = getpass.getpass("Enter password to Delete: ")
@@ -68,6 +68,8 @@ while True:
                                     print("Account has been deleted")
                         
                                     logged_in = False
+
+
                 else:
                     attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
                     remaining_attempts = max_attempts - attempts
