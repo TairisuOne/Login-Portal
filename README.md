@@ -1,6 +1,6 @@
 # Login Portal Project
 
-A simple login portal that validates username and password with limited attempts.
+A simple console based login portal that validates username and password with limited attempts.
 
 ## Installation
 
@@ -11,7 +11,7 @@ A simple login portal that validates username and password with limited attempts
 
 1. Validates Username and Password
 2. Limits Login Attempts
-3. Checks Directory for Username and Password 
+3. Stores and Checks Directory for Username and Password 
 4. Hides Password from being visible
 5. Registration 
 6. Delete Account
