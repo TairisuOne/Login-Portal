@@ -12,6 +12,7 @@ Print:
 
 """
 import getpass # a built-in module by Python that hides the text being typed on screen
+import time 
 
 max_attempts = 3
 attempts = 0
@@ -47,6 +48,10 @@ while True:
 
                 if password == users[username]: # checks to see the password entered matches up with password in the directory associated with key-valued pair: if --true-- then
 
+                    print("Logging in...")
+
+                    time.sleep(2) # adds a delay until the next message pops up
+
                     print("Login Success\n")
                      # exit the loop once the login is successful 
                     
@@ -71,6 +76,9 @@ while True:
                                 if password == users[account_deletion]:
 
                                     del users[account_deletion]
+                                    print("Deleting...")
+
+                                    time.sleep(2)
 
                                     print("Account has been deleted\n")
                         
