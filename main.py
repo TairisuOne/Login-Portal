@@ -24,9 +24,9 @@ correct_password = "123456"""
 #  the following is a directory that stores hard-coded username and password in key-valued pairs
 # key --> usernames : values --> passwords
 users = {
-    "Tyrese": "123456",
-    "Alice": "password123",
-    "Thai": "Python12_Cat"
+    "tyrese": "123456",
+    "alice": "password123",
+    "thai": "Python12_Cat"
 }
 
 while True:
@@ -37,7 +37,7 @@ while True:
 
         while attempts < max_attempts and logged_in: # a loop that iterates until it reaches the max attempts
 
-            username = input("Enter username: ")
+            username = input("Enter username: ").lower()
 
             if username in users: # checks to see if username exists in the directory: if --true-- then ...
                 password = getpass.getpass("Enter password: ")
@@ -56,7 +56,7 @@ while True:
                             logged_in = False
 
                         elif menu == "delete":
-                            account_deletion = input("Enter your username to delete: ").strip()
+                            account_deletion = input("Enter your username to delete: ").strip().lower()
 
                             if account_deletion in users:
                                 password = getpass.getpass("Enter password to Delete: ")
