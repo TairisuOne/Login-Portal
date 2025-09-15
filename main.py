@@ -30,13 +30,16 @@ users = {
 }
 
 while True:
+    print("\n" + "="*30)
     action = input("Do you want to login or register? (login/register): ").lower() # new variable that asks if the user wants to LOGIN or Register
 
     if action == "login": # runs if the condition is TRUE
         logged_in = True
 
-        while attempts < max_attempts and logged_in: # a loop that iterates until it reaches the max attempts
+        print("****LOGIN PORTAL****")
 
+        while attempts < max_attempts and logged_in: # a loop that iterates until it reaches the max attempts
+            
             username = input("Enter username: ").lower()
 
             if username in users: # checks to see if username exists in the directory: if --true-- then ...
@@ -44,18 +47,22 @@ while True:
 
                 if password == users[username]: # checks to see the password entered matches up with password in the directory associated with key-valued pair: if --true-- then
 
-                    print("Login Success")
+                    print("Login Success\n")
                      # exit the loop once the login is successful 
                     
                     while logged_in:
-                        menu = input("Account Menu - Logout/Delete Account: ").strip().lower()
+                        print("\nACCOUNT MENU:")
+                        print("1. Logout")
+                        print("2. Delete Account")
 
-                        if menu == "logout":
+                        menu = input("Enter Option 1 or 2: ").strip()
+
+                        if menu == "1":
                             print(f"{username} signed out.", end="\n")
 
                             logged_in = False
 
-                        elif menu == "delete":
+                        elif menu == "2":
                             account_deletion = input("Enter your username to delete: ").strip().lower()
 
                             if account_deletion in users:
@@ -65,7 +72,7 @@ while True:
 
                                     del users[account_deletion]
 
-                                    print("Account has been deleted")
+                                    print("Account has been deleted\n")
                         
                                     logged_in = False
 
@@ -76,10 +83,14 @@ while True:
                     print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
                     
             else:
-                print("Username not found. Please try again")
+                print("Username not found. Please try again\n")
         break
                 
     elif action == "register":
+
+        print("\n" + "="*30)
+        
+        print("****REGISTER PORTAL****")
 
         while True: # loops until gives a username that's not in use.
             new_username = input("Choose a username: ").lower()
@@ -92,7 +103,7 @@ while True:
 
                 users[new_username] = new_password
 
-                print("Registration Successful!")
+                print("Registration Successful!\n")
                 break
 
 # after exiting the following if statement is ran
