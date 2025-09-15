@@ -2,6 +2,11 @@
 
 A simple console based login portal that validates username and password with limited attempts.
 
+## Demo
+![Login Portal Demo](demo.gif.gif)
+![Login Portal Demo](demo2.gif.gif)
+![Login Portal Demo](demo3.gif.gif)
+
 ## Installation
 
 1. Install Python version 3.0 or higher
