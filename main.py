@@ -48,7 +48,7 @@ while True:
 
                 if password == users[username]: # checks to see the password entered matches up with password in the directory associated with key-valued pair: if --true-- then
 
-                    print("Logging in...")
+                    print("\nLogging in...\n")
 
                     time.sleep(2) # adds a delay until the next message pops up
 
@@ -60,7 +60,7 @@ while True:
                         print("1. Logout")
                         print("2. Delete Account")
 
-                        menu = input("Enter Option 1 or 2: ").strip()
+                        menu = input("Enter Option: ").strip()
 
                         if menu == "1":
                             print(f"{username} signed out.", end="\n")
@@ -76,7 +76,7 @@ while True:
                                 if password == users[account_deletion]:
 
                                     del users[account_deletion]
-                                    print("Deleting...")
+                                    print("\nDeleting...\n")
 
                                     time.sleep(2)
 
