@@ -35,11 +35,10 @@ while True:
     action = input("Do you want to login or register? (login/register): ").lower() # new variable that asks if the user wants to LOGIN or Register
 
     if action == "login": # runs if the condition is TRUE
-        logged_in = True
-
-
+        
         while attempts < max_attempts: # a loop that iterates until it reaches the max attempts
             print("****      LOGIN PORTAL     ****\n")
+
             username = input("Enter username: ").lower()
 
             if username in users: # checks to see if username exists in the directory: if --true-- then ...
@@ -49,12 +48,14 @@ while True:
 
                     print("\nLogging in...\n")
 
-                    time.sleep(2) # adds a delay until the next message pops up
+                    time.sleep(2) # adds a delay of 2 sec until the next message pops up
 
                     print("Login Success\n")
                      # exit the loop once the login is successful 
-                    
+
+                    logged_in = True
                     while logged_in:
+
                         print("\nACCOUNT MENU:")
                         print("1. Logout")
                         print("2. Delete Account")
@@ -62,7 +63,11 @@ while True:
                         menu = input("Enter Option: ").strip()
 
                         if menu == "1":
+                            print("\n Logging out...")
+
+                            time.sleep(2) # a delay of 2 seconds before next message
                             print(f"{username} signed out.", end="\n")
+                            
 
                             logged_in = False
 
@@ -87,6 +92,7 @@ while True:
                 else:
                     attempts += 1 # increments the number of attempts whenever the user inputs incorrect username or password
                     remaining_attempts = max_attempts - attempts
+
                     print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}\n")
                     
             else:
