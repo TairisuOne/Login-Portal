@@ -73,7 +73,7 @@ while True:
                     remaining_attempts = max_attempts - attempts
                     print(f"Incorrect credentials. Remaining Attempts {remaining_attempts}")
                     
-            if username not in users:
+            else:
                 print("Username not found. Please try again")
         break
                 
